@@ -1,8 +1,14 @@
-# Code Review
+# Code Review Process
 
-A guide for reviewing code and having your code reviewed.
+This is not yet final but this will provide us guidelines on how we do code reviews of our pull requests (PRs). Everyone gets to code review as we wanted to develop a stake or ownership of our codebase. And this is a great opportunity for us to build up our team and learn from one another as we aim to do better with our code. 
 
-## Process
+“I love code reviews in theory. In practice, they are only as good as the group that’s responsible for conducting them in the right manner. “ - Unknown
+
+## Checklist
+1. Provide context about your PR by filling in the information needed in our [PR template](https://github.com/carabao-capital/first-circle-app/blob/master/.github/PULL_REQUEST_TEMPLATE.md). 
+2. Make sure to write tests before you open a PR. 
+
+## Code-review Proper
 
 ### For Small PRs
 
