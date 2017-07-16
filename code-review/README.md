@@ -6,7 +6,8 @@ A guide for reviewing code and having your code reviewed.
 
 ### For Small PRs
 
-1. After creating a PR run a slack bot command to pick your PR's code reviewer (Slack bot command TBA by Neil)
+1. After creating a PR run the slack bot command `/reviewerfor (PR link)` in #coding channel
+to pick your PR's code reviewer (Slack bot command TBA by Neil)
 2. Assign the PR's Asana task to the code reviewer. And then comment in the Asana task
 with something like "Please code review (tag the code reviewer here)"
 3. Ping the code reviewers in Slack if necessary e.g. urgent shipping of a hotfix
@@ -14,7 +15,8 @@ with something like "Please code review (tag the code reviewer here)"
 
 ### For Big PRs
 
-1. After creating a PR run a slack bot command to pick your PR's two code reviewers (Slack bot command TBA by Neil)
+1. After creating a PR run the slack bot command `/reviewerfor (PR link)` in #coding channel
+to pick your PR's two code reviewers (Slack bot command TBA by Neil)
 2. Assign the PR's Asana task to the code reviewer. And then comment in the Asana task
 with something like "Please code review (tag the first code reviewer) and (tag the second code reviewer)"
 3. Ping the code reviewers in Slack if necessary e.g. urgent shipping of a hotfix
