@@ -40,6 +40,7 @@ Ruby
   multiple models.
 * Prefer `private` when indicating scope. Use `protected` only with comparison
   methods like `def ==(other)`, `def <(other)`, and `def >(other)`.
+* Avoid metaprogramming
 
 [Bundler binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
 
