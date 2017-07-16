@@ -4,29 +4,23 @@ A guide for reviewing code and having your code reviewed.
 
 ## Process
 
-### For Small PRs
+1. After creating a PR, run the slack bot command `/reviewerfor (PR link)` in the #coding channel
+to pick your PR's code reviewers. The slack bot command will pick two randomly selected
+reviewers - one of them is always going to be a senior product engineer: Vic or Neil.
+2. Assign the PR's Asana task to the **non-senior** code reviewer. After that write a comment in the
+Asana task with something like "Please code review (tag the **non-senior** code reviewer here)"
+3. Ping the code reviewers in Slack if necessary. E.g. urgent shipping of a hotfix
+4. Two :+1:'s are needed before the code reviewee can merge it into master or any other base branch
 
-1. After creating a PR run the slack bot command `/reviewerfor (PR link)` in #coding channel
-to pick your PR's code reviewer (Slack bot command TBA by Neil)
-2. Assign the PR's Asana task to the code reviewer. And then comment in the Asana task
-with something like "Please code review (tag the code reviewer here)"
-3. Ping the code reviewers in Slack if necessary e.g. urgent shipping of a hotfix
-4. Only one :+1: needed for the code reviewee to merge it into master or any other base branch
-
-### For Big PRs
-
-1. After creating a PR run the slack bot command `/reviewerfor (PR link)` in #coding channel
-to pick your PR's two code reviewers (Slack bot command TBA by Neil)
-2. Assign the PR's Asana task to the code reviewer. And then comment in the Asana task
-with something like "Please code review (tag the first code reviewer) and (tag the second code reviewer)"
-3. Ping the code reviewers in Slack if necessary e.g. urgent shipping of a hotfix
-4. Two :+1: needed for the code reviewee to merge it into master or any other base branch
+* Note: Only coders can assign a code reviewer for their PRs. After a successful testing,
+the QA's have to assign the Asana task back to the owner. They have to write a comment
+in the task that it is now ready for code review
 
 ### If You are the Code Reviewer and Want Other Code Reviewer's Opinion
 
 1. Assign the PR's Asana task to another code reviewer. You do not need to run the
-Slack bot command. And then comment in the Asana task
-with something like "Please code review (tag the first code reviewer)"
+Slack bot command. After that write a comment in the Asana task
+with something like "Please code review (tag the code reviewer)"
 2. Ping the other code reviewer if necessary
 
 ## Etiquette
