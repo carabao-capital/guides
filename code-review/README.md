@@ -18,7 +18,7 @@ with something like "Please code review (tag the code reviewer here)"
 2. Assign the PR's Asana task to the code reviewer. And then comment in the Asana task
 with something like "Please code review (tag the first code reviewer) and (tag the second code reviewer)"
 3. Ping the code reviewers in Slack if necessary e.g. urgent shipping of a hotfix
-4. Only one :+1: needed for the code reviewee to merge it into master or any other base branch
+4. Two :+1: needed for the code reviewee to merge it into master or any other base branch
 
 ### If You are the Code Reviewer and Want Other Code Reviewer's Opinion
 
