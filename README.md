@@ -5,7 +5,7 @@ Guides for getting things done, programming well, and programming in style.
 
 * [Best Practices](./best-practices)
 * [Code Review](./code-review)
-* [Styles](./styles)
+* [Styles](./style)
 
 # Contributing
 
