@@ -59,9 +59,8 @@ CSS Stynax Guidelines
 
 ```
 // Wrong
-
 .sample-component {
-padding: 10px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
 }
 
 // Correct
@@ -133,7 +132,7 @@ padding: 10px 20px 10px 20px;
   ```
   // Enter a detailed explanation of the reason behind using such hack
   // webkit hack
-  .selector:not(*:root) { padding: 20px; }
+  .selector:not(*:root) { ... }
   ```
 
 
@@ -187,7 +186,7 @@ padding: 10px 20px 10px 20px;
     justify-content: center;
 
     > .content {
-      // This button will inconsistent with the others
+      // This button will be inconsistent with the others
       > .btn {
         padding: 15px;
         color: blue;
@@ -218,7 +217,7 @@ We will be following some of their guidelines and tweak them a little bit accord
 
 When developing UI, it is important that to think in components. Consider each piece of the UI as an individual "component".
 
-[](https://static.notion-static.com/1427fbd5b07242e49fc79042d0d1b5f1/component-example.png)
+![](https://static.notion-static.com/1427fbd5b07242e49fc79042d0d1b5f1/component-example.png)
 
 Components will be named with **at least two (2) words** , with a dash between each word. Examples of components:
 
@@ -233,7 +232,7 @@ Components will be named with **at least two (2) words** , with a dash between e
 
   Elements are all of the things inside the component.
 
-  [](https://static.notion-static.com/2729fea3f0b847e4a9a3c628cf93429e/component-elements.png)
+  ![](https://static.notion-static.com/2729fea3f0b847e4a9a3c628cf93429e/component-elements.png)
 
 ## Element Selectors
 
@@ -269,7 +268,7 @@ Use classnames whenever possible. Tag selectors are fine, but they may come at a
 
 A variant is a different representation of styling. Both components and elements may have their own specific variants.
 
-[](https://static.notion-static.com/9493ef57370541da817ddd1a1fa4db53/component-modifiers.png)
+![](https://static.notion-static.com/9493ef57370541da817ddd1a1fa4db53/component-modifiers.png)
 
 ## Naming Variants
 
@@ -301,7 +300,7 @@ Dashes are the preferred prefix for variants.
 
 # Nested Components
 
-[](https://static.notion-static.com/a44f2f76090844868663b407ee57fa44/component-nesting.png)
+![](https://static.notion-static.com/a44f2f76090844868663b407ee57fa44/component-nesting.png)
 
 ```
 <div class='article-link'>
