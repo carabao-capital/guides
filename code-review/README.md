@@ -10,7 +10,7 @@ This is not yet final but this will provide us guidelines on how we do code revi
 
 ## Code-review Proper
 
-1. After creating a PR, run the slack bot command `/reviewerfor (PR link)` in the #coding channel
+1. After creating a PR, run the slack bot command `@plankbot reviewer for (PR number)` in the #coding channel
 to pick your PR's code reviewers. The slack bot command will pick two randomly selected
 reviewers - one of them is always going to be a senior product engineer: Vic or Neil.
 2. Assign the PR's Asana task to the **non-senior** code reviewer. After that write a comment in the
