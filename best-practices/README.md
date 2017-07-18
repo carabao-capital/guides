@@ -200,6 +200,7 @@ CSS
   project-specific browser support that is needed.
 * Prefer `overflow: auto` to `overflow: scroll`, because `scroll` will always
   display scrollbars outside of macOS, even when content fits in the container.
+* Prefer `display: flex` over `float` properties
 
 [autoprefixer]: https://github.com/postcss/autoprefixer
 
