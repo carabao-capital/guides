@@ -116,12 +116,13 @@ Relational Databases
 [Index foreign keys]: https://tomafro.net/2009/08/using-indexes-in-rails-index-your-associations
 [`NOT NULL`]: http://www.postgresql.org/docs/9.1/static/ddl-constraints.html#AEN2444
 
-Postgres
+Database
 --------
 
 * Avoid multicolumn indexes. Postgres [combines multiple indexes] efficiently.
   Optimize later with a [compound index] if needed.
 * Consider a [partial index] for queries on booleans.
+* Do not commit schema.rb changes that are not part of your changes
 
 [combines multiple indexes]: http://www.postgresql.org/docs/9.1/static/indexes-bitmap-scans.html
 [compound index]: http://www.postgresql.org/docs/9.2/static/indexes-bitmap-scans.html
