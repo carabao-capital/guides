@@ -41,6 +41,7 @@ Ruby
 * Prefer `private` when indicating scope. Use `protected` only with comparison
   methods like `def ==(other)`, `def <(other)`, and `def >(other)`.
 * Avoid metaprogramming
+* Make method/function/keyword naming descriptive. If possible add comment how the method/function/keyword works.
 
 [Bundler binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
 
@@ -73,6 +74,7 @@ Rails
 * Validate the associated `belongs_to` object (`user`), not the database column
   (`user_id`).
 * Use `db/seeds.rb` for data that is required in all environments.
+* Make method/function/keyword naming descriptive. If possible add comment how the method/function/keyword works.
 
 [date-block]: /best-practices/samples/ruby.rb#L10
 [fkey]: http://robots.thoughtbot.com/referential-integrity-with-foreign-keys
