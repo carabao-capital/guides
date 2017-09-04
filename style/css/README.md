@@ -24,14 +24,14 @@ Ideally, our code should follow these rules:
 * Meaningful use of whitespace.
 
 ```
-// Don't Do This
+// Bad
 .foo{
       display: block; overflow:hidden;
 
     background: #FEFEFE;
 }
 
-// Do This
+// Good
 .foo {
   display: block;
   overflow: hidden;
@@ -39,19 +39,99 @@ Ideally, our code should follow these rules:
 }
 ```
 
+* add a space per section of a class (child, mixins, extends)
+```
+  // Bad
+  .requirements-submission {
+    padding: map-get($spacing, 'm');
+    width: 100%;
+    & > .panel {
+      ...
+    }
+    @include mobile {
+      padding: none;
+    }
+  }
+
+  // Good
+  .requirements-submission {
+    padding: map-get($spacing, 'm');
+    width: 100%;
+
+    & > .panel {
+      ...
+    }
+
+    @include mobile {
+      padding: none;
+    }
+  }
+```
+
+* class declaration should have the css components/compositions first then the utility classes.
+```
+  // Bad
+  class="marginBottom-s marginTop-s requirement-container"
+
+  // Good
+  class="requirement-container marginBottom-s marginTop-s"
+```
 
 ---
 
-# 80 Characters Wide
+# File Format
 
-Where possible, limit CSS files’ width to 80 characters. Reasons for this include:
+* File names should be in `dash-case`
+* File names should be the same name with the component name.
+```
+  // Bad
+  // requirements_subimssion.scss
+  // .requirements-box { ... }
 
-* The ability to have multiple files open side by side;
-* Viewing CSS on sites like GitHub, or in terminal windows;
-* Providing a comfortable line length for comments.
+  // Good
+  // requirements-subimssion.scss
+  // .requirements-subimssion { ... }
+```
 
-There will be unavoidable exceptions to this rule—such as URLs, or gradient syntax—which shouldn’t be worried about.
+* There should be 1 component per file, to make it easier to maintain
+* Encapsualte child component properly
+```
+  // Bad
+  // requirements-submission.scss
+  .requirements-submission {
+    ...
+  }
 
+  // .panel is accessible everywhere and will interfere with other panel class
+  .panel {
+    ...
+  }
+
+  // Good
+  .requirements-submission {
+    ...
+
+    // the '&' operator refers to the parent class(.requirements-submission)
+    // and '>' sets the css property strictly to its child class(.panel)
+    & > .panel {
+      ...
+    }
+  }
+
+  // another way if you want it in a separate file
+  // requirements-submission/panel.scss
+  .requirements-submission > .panel {
+    ...
+  }
+```
+
+* Group related components into a folder
+```
+  requirements/
+    - requirements-submission.scss
+    - panel.scss
+    - header.scss
+```
 
 CSS Stynax Guidelines
 ---------------------
@@ -198,6 +278,16 @@ CSS Stynax Guidelines
 
 ```
 
+* Class declarations should have the css compositions first then the utility classes.
+
+```
+  // bad
+  class="marginBottom-s marginTop-s new-form-container"
+
+  // good
+  class="new-form-container marginBottom-s marginTop-s"
+```
+
 * Refer to RSCSS when creating components
 # RSCSS
 
@@ -224,9 +314,9 @@ Components will be named with **at least two (2) words** , with a dash between e
   * A like button (.like-button)
   * A search form (.search-form)
   * A news article card (.article-card)
-  * A namespaced component (.sample-custom-header)
+* A namespaced component (.sample-custom-header)
 
----
+  ---
 
 # Elements
 
@@ -304,11 +394,11 @@ Dashes are the preferred prefix for variants.
 
 ```
 <div class='article-link'>
-  <div class='vote-box'>
-  ...
-  </div>
-  <h3 class='title'>...</h3>
-  <p class='meta'>...</p>
+<div class='vote-box'>
+...
+</div>
+<h3 class='title'>...</h3>
+<p class='meta'>...</p>
 </div>
 ```
 
