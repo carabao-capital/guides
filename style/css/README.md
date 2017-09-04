@@ -394,11 +394,11 @@ Dashes are the preferred prefix for variants.
 
 ```
 <div class='article-link'>
-<div class='vote-box'>
-...
-</div>
-<h3 class='title'>...</h3>
-<p class='meta'>...</p>
+  <div class='vote-box'>
+  ...
+  </div>
+  <h3 class='title'>...</h3>
+  <p class='meta'>...</p>
 </div>
 ```
 
