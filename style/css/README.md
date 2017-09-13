@@ -10,245 +10,16 @@ That being said, these set of rules are opinionated which make this a living doc
 
 ---
 
-# Syntax and Formatting
-
-The very first thing a styleguide should do is describe the way our code will look.
-
-When multiple developers are involved in writing CSS on the same project(s), it is very likely that someone will start doing things in his/her own way. This guideline will promote consistency and help with reading and updating the existing codebase.
-
-Ideally, our code should follow these rules:
-
-* Two (2) spaces indents, no tabs;
-* Ideally, 80-characters wide lines;
-* Properly written multi-line CSS rules;
-* Meaningful use of whitespace.
-
-```
-// Bad
-.foo{
-      display: block; overflow:hidden;
-
-    background: #FEFEFE;
-}
-
-// Good
-.foo {
-  display: block;
-  overflow: hidden;
-  background: #FEFEFE;
-}
-```
-
-* add a space per section of a class (child, mixins, extends)
-```
-  // Bad
-  .requirements-submission {
-    padding: map-get($spacing, 'm');
-    width: 100%;
-    & > .panel {
-      ...
-    }
-    @include mobile {
-      padding: none;
-    }
-  }
-
-  // Good
-  .requirements-submission {
-    padding: map-get($spacing, 'm');
-    width: 100%;
-
-    & > .panel {
-      ...
-    }
-
-    @include mobile {
-      padding: none;
-    }
-  }
-```
-
-* class declaration should have the css components/compositions first then the utility classes.
-```
-  // Bad
-  class="marginBottom-s marginTop-s requirement-container"
-
-  // Good
-  class="requirement-container marginBottom-s marginTop-s"
-```
-
----
-
 # File Format
 
 * File names should be in `dash-case`
 * File names should be the same name with the component name.
 ```
   // Bad
-  // requirements_subimssion.scss
+  // requirements_submission.scss
   // .requirements-box { ... }
 
   // Good
-  // requirements-subimssion.scss
-  // .requirements-subimssion { ... }
-```
-
-* There should be 1 component per file, to make it easier to maintain
-* Encapsualte child component properly
-```
-  // Bad
-  // requirements-submission.scss
-  .requirements-submission {
-    ...
-  }
-
-  // .panel is accessible everywhere and will interfere with other panel class
-  .panel {
-    ...
-  }
-
-  // Good
-  .requirements-submission {
-    ...
-
-    // the '&' operator refers to the parent class(.requirements-submission)
-    // and '>' sets the css property strictly to its child class(.panel)
-    & > .panel {
-      ...
-    }
-  }
-
-  // another way if you want it in a separate file
-  // requirements-submission/panel.scss
-  .requirements-submission > .panel {
-    ...
-  }
-```
-
-* Group related components into a folder
-```
-  requirements/
-    - requirements-submission.scss
-    - panel.scss
-    - header.scss
-```
-
-CSS Stynax Guidelines
----------------------
-* Prefer using the longhand properties over shorthand properties for more clarity and readability.
-
-```
-// Wrong
-.sample-component {
-  padding: 10px 20px 10px 20px;
-}
-
-// Correct
-
-.sample-component {
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-le: 20px;
-}
-```
-
-* Avoid hooking styles to IDs at all costs.
-```
-// Wrong
-
-#sample-id {
-  background: #000000;
-}
-
-// Correct
-
-.sample-class {
-  background: #000000;
-}
-```
-
-* Avoid using `!important` at all costs.
-
-```
-// Never do this
-
-.sample-component {
-  padding-top: 10px !important;
-  padding-right: 10px !important;
-  padding-bottom: 10px !important;
-  padding-left: 10px !important;
-}
-```
-
-* Use variables for single property which accepts a custom value. Avoid using magic numbers as much as possible.
-```
-// Avoid
-.sample-component {
-  padding-top: 109px;
-  width: 73px;
-}
-
-// use map-get to select the value
-// all the values are available in variables.scss
-.sample-component {
-  padding-top: map-get($spacing, "l");
-  width: map-get($spacing, "m");
-}
-```
-
-* Write detailed comments for code that isn't self-documenting:
-  * Uses of z-index
-    ```
-    // Enter a detailed comment here about the z-index usage
-
-    .sample-component {
-      position: relative;
-      z-index: 9999;
-    }
-    ```
-
-  * Compatibility or browser-specific hacks
-  ```
-  // Enter a detailed explanation of the reason behind using such hack
-  // webkit hack
-  .selector:not(*:root) { ... }
-  ```
-
-
-* Do not nest selectors more than three levels deep!
-```
-.main-layout {
-  > .sidebar {
-    > nav {
-      // This is not inception, no need to get deeper
-    }
-  }
-}
-```
-
-* Prefer `dash-case` over `camelCase` when naming css classes, only utility classes that has `styleProperty-value` is written in `camelCase` 
-```
-// bad
-.pageContainer { ... }
-// better
-.page-container { ... }
-// utility class
-.paddingTop-xs { ... }
-```
-
-* Don't use `div` for everything.
-```
-// Bad
-<div class="nav">
-  <div class="list-group">
-    <div class="item"><a href="/home"> Home </a></div>
-    <div class="item"><a href="/profile"> Profile </a></div>
-    <div class="item"><a href="/logout"> Logout </a></div>
-  </div>
-</div>
-
-// Good
 <nav class="nav">
   <ul class="list-group">
     <li class="item"><a href="/home"> Home </a></li>
@@ -281,10 +52,10 @@ CSS Stynax Guidelines
 * Class declarations should have the css compositions first then the utility classes.
 
 ```
-  // bad
+  // Bad
   class="marginBottom-s marginTop-s new-form-container"
 
-  // good
+  // Good
   class="new-form-container marginBottom-s marginTop-s"
 ```
 
